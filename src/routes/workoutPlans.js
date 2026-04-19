@@ -9,7 +9,7 @@ router.use(protect);
 
 // Rotte per tutti gli utenti
 router.get('/', workoutPlanController.getAllWorkoutPlans);
-router.get('/active/:userId?', workoutPlanController.getActivePlan);
+router.get('/active/:userId', workoutPlanController.getActivePlan);
 router.get('/:id', validateId('id'), workoutPlanController.getWorkoutPlan);
 
 // Rotte protette (solo coach e admin possono creare/modificare)
