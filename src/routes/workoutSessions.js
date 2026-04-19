@@ -9,8 +9,8 @@ router.use(protect);
 
 // Rotte per tutti gli utenti
 router.get('/', workoutSessionController.getAllSessions);
-router.get('/stats/:userId?', workoutSessionController.getProgressStats);
-router.get('/history/:exerciseId/:userId?', workoutSessionController.getExerciseHistory);
+router.get('/stats/:userId', workoutSessionController.getProgressStats);
+router.get('/history/:exerciseId/:userId', workoutSessionController.getExerciseHistory);
 router.get('/:id', validateId('id'), workoutSessionController.getSession);
 
 // Creazione e modifica sessioni (tutti gli utenti possono registrare i propri allenamenti)
